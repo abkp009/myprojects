@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost  # Hostname by which the Eureka clients can locate this server
+  client:
+    register-with-eureka: false  # Since this is a Eureka server, it should not register with itself
+    fetch-registry: false  # Do not fetch registry information from other Eureka servers
+    #service-url:
+    #  defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false  # Disable self-preservation mode
+    eviction-interval-timer-in-ms: 60000  # Eviction interval (default is 60 seconds)
+    response-cache-update-interval-ms: 30000  # Response cache update interval (default is 30 seconds)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose all endpoints
+  endpoint:
+    health:
+      show-details: always  # Show full health status details
