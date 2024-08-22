@@ -1,9 +1,9 @@
 spring:
   application:
     name: spring-docker
-#  sql:
-#    init:
-#      mode: always
+  sql:
+    init:
+      mode: always
   datasource:
     url: jdbc:postgresql://localhost:5432/mydatabase
     username: myuser

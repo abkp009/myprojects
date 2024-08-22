@@ -4,11 +4,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.*;
+
+import java.util.Date;
 
 @Table(name = "BOOKS")
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Books {
     @Id
     @GeneratedValue
@@ -17,5 +23,5 @@ public class Books {
     private String author;
     private String category;
     private double price;
-
+    private Date publishdate;
 }
